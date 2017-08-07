@@ -1,0 +1,203 @@
+.header-container {
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 20px;
+}
+
+.header-logo img, h1 {
+	display: inline-block;
+}
+
+.header-logo img {
+	margin-top: -20px;
+}
+
+.header-logo h1 {
+	margin-top: 15px;
+}
+
+.header-logo, .isp-count-api-hits {
+	display: inline-block;
+}
+
+.isp-count-api-hits {
+	border: 1px solid darkgray;
+	margin-top: -5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	text-align: center;
+}
+
+.isp-count-api-hits .panel-body {
+}
+
+.isp-count-api-hits .well {
+	border-radius: 0px;
+}
+
+.home-search-box-container {
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.home-logo-name img, h2 {
+	display: inline-block;
+}
+
+.home-logo-name img {
+	margin-top: -9px;
+}
+
+.home-logo-name h2 {
+	margin-top: 10px;
+}
+
+.input-search-group {
+	padding: 5px 5px 5px 5px;
+	background-color: darkgray;
+}
+
+.isp-list-container {
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+.isp-list-group-container {
+	margin-left: 1%;
+	margin-right: 1%;
+	height : 53vh;
+	overflow-y: scroll;
+}
+
+.isp-list-group-container li {
+	margin-top: 1%;
+	border-color: cadetblue;
+	border-radius: 5px;
+	background-color: cornsilk;
+}
+
+.isp-list-item-db {
+	 display : inline;
+}
+
+.isp-list-item-name {
+	 display : inline;
+	 margin-top: 2px;
+}
+
+.isp-list-item-chevron {
+	display : inline;
+	float: right;
+	padding-top : 3px;
+}
+
+.isp-list-item-price {
+	display : inline;
+	float: right;
+}
+
+.isp-list-item-rupee {
+	display : inline;
+	float: right;
+	padding-top : 5px;
+}
+
+.isp-sorting-container {
+	margin-left: 5px;
+	margin-right: 5px;
+	text-align: center;
+}
+
+.isp-sorting-container .panel .panel-body {
+	padding: 0px 0px 0px 0px;
+	border-color: white;
+}
+
+.sort-by-label {
+	padding: 5px 5px 5px 5px;
+	margin-right: 10px;
+	border: 2px solid rgb(134, 134, 134);
+	border-radius: 5px;
+	padding : 9px 8px 9px 8px;
+	color : dimgray;
+	font-size: 15px;
+}
+
+.radio-btn-container {
+	border: 1px solid rgb(134, 134, 134);
+	margin-left: 3px;
+	padding: 10px 10px 10px 10px;
+}
+
+.sort-by-radio-price {
+	padding-right: 5px;
+}
+
+.isp-image {
+	padding-top: 3%;
+}
+
+.isp-details {
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+.panel-isp-details img, span {
+	display: inline;
+}
+
+.rating-container {
+	margin-bottom: 2%;
+}
+
+.rating-label {
+}
+
+.rating-label h3 {
+	margin-top: -1%;
+}
+
+.rating-star {
+	font-size : 170%;
+	margin-bottom: -1%;
+}
+
+.filled {
+  color: darkgoldenrod;
+}
+
+.rating-star li {
+	display: inline;
+	padding-right: 5%;
+}
+
+.isp-button-container {
+	margin-left: 5px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+.isp-link-btn-container {
+	margin-bottom: 5px;
+	padding-left: 0px;
+}
+
+.isp-share-btn-container {
+	margin-bottom: 5px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.isp-download-btn-container {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-bottom: 5px;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}

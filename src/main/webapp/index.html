@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ispApp">
+	<head>
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>ISP HackerEarth</title>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/main.css" rel="stylesheet">
+		<link href="app.animations.css" rel="stylesheet">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/angular.js"></script>
+		<script src="js/angular-route.js"></script>
+		<script src="js/angular-resource.js"></script>
+		<script src="js/angular-animate.js"></script>
+		<script src="app.module.js"></script>
+		<script src="app.config.js"></script>
+		<script src="isp-list/isp-list.component.js"></script>
+		<script src="isp-list/isp-list.module.js"></script>
+		<script src="core/core.module.js"></script>
+		<script src="core/isp/isp.module.js"></script>
+		<script src="core/isp/isp.service.js"></script>
+		<script src="core/data/data.module.js"></script>
+		<script src="core/data/data.service.js"></script>
+		<script src="app.directives.js"></script>
+		<script src="app.animations.js"></script>
+		<script src="isp-list/isp-list.directive.js"></script>
+	</head>
+	<body>
+  		
+		<div class="container-fluid">
+  		 	
+			<div ng-view></div>
+  	
+		</div>
+	
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+	</body>
+	<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
+</html>

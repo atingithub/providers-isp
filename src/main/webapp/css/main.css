@@ -1,0 +1,207 @@
+.header-container {
+	margin-top: 10px;
+}
+
+.header-container img, h1 {
+	display: inline-block;
+	margin: auto;
+}
+
+.header-container img {
+	text-align: center;
+}
+
+.header-container h1 {
+	vertical-align: middle;
+}
+
+.isp-count-container {
+	text-align: center;
+}
+
+.isp-count-container .panel {
+	margin-top: 3vh;
+	margin-bottom: 3vh;
+}
+
+.isp-count-container .panel-body {
+	border: 2px solid darkgray;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/* header CSS */
+.header-container .panel {
+	margin-top : 10px;
+	margin-bottom: 0px;
+}
+
+.isp-home {
+	margin-top: 10px;
+}
+
+.isp-home img, h3 {
+	display: inline-block;
+	margin: auto;
+}
+
+.isp-home h3 {
+	vertical-align: middle;
+}
+
+.isp-search {
+	padding-top : 10px;
+	padding-bottom: 10px;
+}
+
+.isp-list .list-group {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.isp-list-item {
+	margin-bottom: 0px;
+}
+
+.isp-list {
+	height: 65vh;
+	overflow-y: scroll;
+}
+
+.isp-list li {
+	margin: 1px;
+}
+
+.isp-list-item-db,
+.isp-list-item-price,
+.isp-list-item-name,
+.isp-list-item-chevron,
+.isp-list-item-rupee {
+	display: inline-block;
+	margin: auto;
+}
+
+.isp-list-item-rupee {
+	margin-top: 4px;
+}
+
+.isp-list-item-chevron {
+	margin-top: 1px;
+	width: 18px;
+	height: 18px;
+}
+
+.isp-list-item-price {
+	font-size: 15px;
+}
+
+.isp-list-item-name {
+	font-size: 15px;
+}
+
+.sort-container {
+	margin-top: 4vh;
+}
+
+.sort-by-label {
+	border: 2px solid darkgray;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.sort-icon, .sort-label {
+	margin-left: 5px;
+	display: inline-block;
+	margin: auto;
+}
+
+.sort-radio-btn {
+	border: 1px solid darkgray;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.sort-radio-btn input {
+	margin-left: 5px;
+}
+
+.price-radio, .rating-radio {
+	display: inline-block;
+	margin: auto;
+}
+
+.isp-detail-image {
+	text-align: center;
+}
+
+.isp-detail-image .thumbnail {
+	margin-top: 2px;
+	margin-bottom: 9px;
+}
+
+.isp-detail-list .panel {
+	margin-bottom: 0px;
+}
+
+.isp-detail-list .panel-default {
+}
+
+.isp-detail-list .panel .panel-heading {
+	font-size: 20px;
+	text-align: center;
+}
+
+.isp-detail-list .list-group .list-group-item img, strong {
+	display: inline-block;
+}
+
+.isp-rating-list h3 {
+	margin-top: 8px;
+}
+
+.rating {
+	font-size : 200%;
+	padding-top : 5px;
+	padding-bottom: 0px;
+}
+
+.rating .filled {
+  color: darkgoldenrod;
+}
+
+.isp-description-container .well {
+	margin-bottom: 0px;
+}
+
+
+.isp-link-btn-container .btn {
+	margin-top: 10px;
+	color: cadetblue;
+	border: 2px solid;
+}
+
+.isp-share-btn-container .btn {
+	margin-top: 10px;
+	color: cadetblue;
+	border: 2px solid;
+}
+
+.isp-download-btn-container .btn {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: cadetblue;
+	border: 2px solid;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
