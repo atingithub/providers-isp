@@ -1,64 +1,71 @@
+<!-- header -->
 <div class="row">
   
-	<div class="col-xs-12 col-sm-6 col-md-8 header-container">
-		<img ng-src="img/logo-50px.png" alt="logo image">
-		<h1>ISP HackerEarth <small>&#8213; searching ISP made easy!</small></h1>
+	<div class="col-xs-12 col-sm-6 col-md-8">
+		<h1 id="header"><i class="fa fa-houzz fa-2x" style=" vertical-align: middle;"></i> &nbsp;ISP HackerEarth <small>&#8213; searching ISP made easy!</small></h1>
 	</div>
 
-	<div class="col-xs-12 col-sm-6 col-md-3 isp-count-container">
-		<div class="panel panel-body">
-			Total ISP:<strong>{{$ctrl.totalIsp}}</strong>  &nbsp; <strong>|</strong> &nbsp;
-			API Hits: <strong>{{$ctrl.totalApiHits}}</strong>
+	<div class="col-xs-12 col-sm-6 col-md-offset-1 col-md-3">
+		<div id="imaginary_container"> 
+			<div class="input-group stylish-input-group panel-top">
+				<span class="input-group-addon">Total ISP: {{$ctrl.totalIsp}}</span>
+				<span class="input-group-addon">API Hits: {{$ctrl.totalApiHits}}</span>
+			</div>
 		</div>
 	</div>
 	
 </div>
 
+
+
 <div class="row">
 	
   <div class="col-xs-12 col-sm-6 col-md-6 isp-list-container">
 		
-		<!-- home and search -->
+		<!-- sort and search -->
 		<div class="row">
 			
-			<div class="col-sm-8 col-md-4 isp-home">
-				<img ng-src="img/home.png" class="img-responsive" alt="Home">
-				<h3>Home</h3>
+			<div class="col-xs-12 col-sm-12 col-md-6 isp-search">
+				
+				<div id="imaginary_container"> 
+					<div class="input-group stylish-input-group">
+						<span class="input-group-addon"><button type="submit"><i class="fa fa-search"></i></button></span>
+						<input ng-model="$ctrl.query" type="text" class="form-control" placeholder="Search (by ISP name, price, rating)" >
+					</div>
+				</div>
+				
 			</div>
 			
-			<div class="col-sm-12 col-md-8 isp-search">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-					<input ng-focus="$ctrl.toggleDisplay(true)" ng-blur="$ctrl.toggleDisplay(false)"
-								 type="text" class="form-control" aria-label="..." placeholder="Search (by ISP name, price, rating)">
-					<span ng-show=$ctrl.displayCross class="input-group-addon"><i class="glyphicon glyphicon-remove-circle"></i></span>
+			<div class="col-xs-12 col-sm-12 col-md-6 isp-sort">
+				
+				<div id="imaginary_container"> 
+					<div class="input-group stylish-input-group">
+						<span class="input-group-addon"><span class="fa fa-sort-alpha-asc"></span><span class="sort-label">&nbsp; Sort by</span></span>
+						<span class="input-group-addon">
+							<label class="radio-inline">
+								<input type="radio" value="price" ng-model="$ctrl.orderByProp" class="price-radio">&nbsp;Price</label>
+							<label class="radio-inline">
+								<input type="radio" value="rating" ng-model="$ctrl.orderByProp" class="rating-radio">&nbsp;Rating</label>
+						</span>
+						
+					</div>
 				</div>
+				
 			</div>
 			
 		</div>
-		
+
 		<div class="row">
 			
 			<div class="col-sm-12 col-md-12 isp-list">
-				<div isps></div>
-			</div>
-			
-		</div>
-		
-		<div class="row">
-			
-			<div class="col-xs-12 col-sm-12 col-md-12 col-md-offset-2 sort-container">
-			`	
-				<div class="col-md-4 sort-by-label">
-					<img ng-src="img/sort-20px.png" alt="Database" class="img-responsive sort-icon">
-					<span class="sort-label">SORT BY</span>
+				<div class="list-group">
+					<a ng-click="$ctrl.setDataDetails(isp.id)"
+						 ng-repeat="isp in $ctrl.isps | filter:$ctrl.query | orderBy : $ctrl.orderByProp" class="list-group-item isp-list-item">
+						<span class="fa fa-database"></span>
+						<span>{{isp.name}}</span>
+						<span class="pull-right">&#x20b9;{{isp.lowestPrice}}&nbsp; &rsaquo;</span>
+					</a>
 				</div>
-				
-				<div class="col-md-4 sort-radio-btn">
-					<input type="radio" value="price" ng-model="$ctrl.ordrByProp" class="price-radio">&nbsp;PRICE
-					<input type="radio" value="rating" ng-model="$ctrl.ordrByProp" class="rating-radio">&nbsp;RATING
-				</div>
-				
 			</div>
 			
 		</div>
@@ -69,39 +76,38 @@
 		
 		<div class="row">
 			
-			<div class="col-md-6 isp-detail-image">
+			<div class="col-sm-12 col-md-6 isp-detail-image">
 				<div class="thumbnail">
-					<img ng-src="{{$ctrl.isp.image}}" alt="{{$ctrl.isp.name}}" class="img-responsive">
+					<img align="center" ng-src="{{$ctrl.isp.image}}" alt="{{$ctrl.isp.name}}" class="img-responsive">
 				</div>
 			</div>
 			
-			<div class="col-md-6 isp-detail-list">
+			<div class="col-sm-12 col-md-6 isp-detail-list">
 				
 				<div class="panel panel-default">
-					<!-- Default panel contents -->
+					
 					<div class="panel-heading"><strong>{{$ctrl.isp.name}}</strong></div>
 					
-					<!-- List group -->
-					<ul class="list-group">
-						
-						<li class="list-group-item">
-							<img ng-src="img/wifi-20px.png" alt="wifi" class="img-responsive">
-							&nbsp;&nbsp;Max. Speed. {{$ctrl.isp.maxSpeed}}
-						</li>
-						<li class="list-group-item">
-							<img ng-src="img/phone-20px.png" alt="phone" class="img-responsive">
-							&nbsp;&nbsp;&nbsp;{{$ctrl.isp.contactNo}}
-						</li>
-						<li class="list-group-item">
-							<img ng-src="img/email-20px.png" alt="email" class="img-responsive">
-							&nbsp;{{$ctrl.isp.email}}
-						</li>
-						<li class="list-group-item">
-							<img ng-src="img/money-20px.png" alt="money" class="img-responsive">
-							&nbsp;&nbsp;&nbsp;Min. Plan. {{$ctrl.isp.lowestPrice}}
-						</li>
-						
-					</ul>
+					<table class="table">
+						<tbody>
+							<tr>
+								<td align="center"><i class="fa fa-wifi fa-2x"></i></td>
+								<td>Max. Speed. {{$ctrl.isp.maxSpeed}}</td>
+							</tr>
+							<tr>
+								<td align="center"><i class="fa fa-phone fa-2x"></i></td>
+								<td>{{$ctrl.isp.contactNo}}</td>
+							</tr>
+							<tr>
+								<td align="center"><i class="fa fa-envelope-o fa-2x"></i></td>
+								<td>{{$ctrl.isp.email}}</td>
+							</tr>
+							<tr>
+								<td align="center"><i class="fa fa-inr fa-2x"></i></td>
+								<td>Min. Plan. {{$ctrl.isp.lowestPrice}}</td>
+							</tr>
+						</tbody>
+					</table>
 					
 				</div>
 				
@@ -109,20 +115,21 @@
 						
 		</div>
 		
+		
 		<div class="row">
 			
-			<div class="col-md-8 isp-rating-list">
+			<div class="col-md-8 rating-container">
 				<h3 class="pull-left">Rating: </h3>
-				<div star rating-value="$ctrl.isp.rating" max="5"></div>
+				<span star rating-value="$ctrl.isp.rating" max="5"></span>
 			</div>
 			
 		</div>
 		
 		<div class="row">
 			
-			<div class="col-md-12 isp-description-container">
-				<div class="well">
-					{{$ctrl.isp.description}}
+			<div class="col-md-12 description-container">
+				<div class="panel panel-primary">
+  				<div class="panel-body fixed-panel">{{$ctrl.isp.description}}</div>
 				</div>
 			</div>
 			
@@ -132,14 +139,14 @@
 			
 			<div class="col-md-4 isp-link-btn-container">
 				<button type="button" class="btn btn-default btn-lg btn-block" ng-click="$ctrl.link($ctrl.isp.url)" >
-					<span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;Link
+					<i class="fa fa-link"></i>&nbsp;Link
 				</button>
 			</div>
 			
 			<div class="col-md-4 isp-share-btn-container">
-				<button type="button" class="btn btn-default btn-lg btn-block" ng-click="$ctrl.share()"
+				<button type="button" class="btn btn-default btn-lg btn-block"
 								data-toggle="modal" data-target="#myModal">
-					<span class="glyphicon glyphicon-share" aria-hidden="true"></span>&nbsp;Share
+					<i class="fa fa-share-square"></i>&nbsp;Share
 				</button>
 			</div>
 			
@@ -155,28 +162,28 @@
 						<div class="modal-body">
 							
 							<div class="list-group">
-								<a ng-href="https://facebook.com/sharer.php?u=https://github.com/atingithub/providers-isp"
-									 class="list-group-item">
-									<img ng-src="img/facebook-25px.png" alt="facebook">
-									Facebook</a>
-								<a ng-href="https://twitter.com/intent/tweet?text={{pageTitleUri}}'%20'{{pageLink}}"
-									 class="list-group-item">
-									<img ng-src="img/twitter-25px.png" alt="twitter">
-									Twitter</a>
-								<a ng-href="https://plus.google.com/share?url={{pageLink}}"
-									 class="list-group-item">
-									<img ng-src="img/google-plus-25px.png" alt="google-plus">
-									Google+</a>
-								<a ng-href="https://www.linkedin.com/shareArticle?mini=true&url={{pageLink}}&title={{pageTitleUri}}"
-									 class="list-group-item">
-									<img ng-src="img/linkedin-25px.png" alt="linkedin">
-									Linked In</a>
-								<a ng-href="#" class="list-group-item">
-									<img ng-src="img/pinterest-25px.png" alt="pinterest">
-									Pinterest</a>
-								<a ng-href="#" class="list-group-item">
-									<img ng-src="img/tumbler-25px.png" alt="tumblr">
-									Tumblr</a>
+								
+								<li class="list-group-item">
+									<button type="button" class="btn btn-link btn-block" ng-click="$ctrl.share('Facebook')">
+										<i class="fa fa-facebook-official fa-2x" style=" vertical-align: middle;"></i> &nbsp;Facebook
+									</button>
+								</li>
+  							<li class="list-group-item">
+									<button type="button" class="btn btn-link btn-block" ng-click="$ctrl.share('Twitter')">
+										<i class="fa fa-twitter fa-2x" style=" vertical-align: middle;"></i> &nbsp;Twitter
+									</button>
+								</li>
+  							<li class="list-group-item">
+									<button type="button" class="btn btn-link btn-block" ng-click="$ctrl.share('Google')">
+										<i class="fa fa-google-plus fa-2x" style=" vertical-align: middle;"></i> &nbsp;Google
+									</button>
+								</li>
+								<li class="list-group-item">
+									<button type="button" class="btn btn-link btn-block" ng-click="$ctrl.share('LinkedIn')">
+										<i class="fa fa-linkedin-square fa-2x" style=" vertical-align: middle;"></i>&nbsp; Linked In
+									</button>
+								</li>
+
 							</div>
 							 
 						</div>
@@ -191,7 +198,7 @@
 			
 			<div class="col-md-4 isp-download-btn-container">
 				<button type="button" class="btn btn-default btn-lg btn-block" ng-click="$ctrl.download($ctrl.isp.id)">
-					<span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span>&nbsp;Download
+					<i class="fa fa-cloud-download"></i>&nbsp;Download
 				</button>
 			</div>
 			

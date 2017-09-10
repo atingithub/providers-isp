@@ -4,7 +4,7 @@ angular.
 		function($resource) {
 			
 			return {
-				IspList: $resource('http://localhost:8081/providers-isp/api/isp?type=json&query=isp_list/:ispId.json', {}, {
+				IspList: $resource('http://localhost:8086/providers-isp/api/isp?type=json&query=isp_list/:ispId.json', {}, {
 					query: {
 						method: 'GET',
 						params: {ispId: 'isps'},
@@ -18,16 +18,23 @@ angular.
 						isArray: true
 					}}),
 				
-				ApiHits: $resource('isp/isp.json', {}, {
+				ApiHits: $resource('http://localhost:8086/providers-isp/api/isp/hits', {}, {
 					query: {
 						method: 'GET',
-						params: {ispId: 'isps'},
-						isArray: false
+						isArray: true
 					}}),
 				
-				DownloadFile: $resource('http://localhost:8081/provider-isp/api/isp/download?filename=airtel', {}, {
-					query: {
+				UpdateApiHits: $resource('http://localhost:8086/providers-isp/api/isp/hits/update', {}, {
+					save : {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' }
+					}}),
+				
+				DownloadFile: $resource('http://localhost:8086/providers-isp/api/isp/download?filename=:filename', {}, {
+					get: {
 						method: 'GET',
+						dataType: 'binary',
+						processData: false,
 						headers: {
         			accept: 'application/*'
     				},

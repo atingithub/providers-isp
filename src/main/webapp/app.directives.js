@@ -5,7 +5,7 @@ angular.
       restrict: 'A',
       template: '<ul class="rating list-unstyled list-inline">' +
                   '<li ng-repeat="star in stars" ng-class="star">' +
-                    '<span class="glyphicon glyphicon-star"></span>' +
+                    '<i class="fa fa-star-o"></i>' +
                   '</li>' +
                 '</ul>',
       scope: {
